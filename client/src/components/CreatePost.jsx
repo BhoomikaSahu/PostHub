@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+import axiosConfig from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
@@ -11,7 +11,7 @@ const CreatePost = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      await axios.post(
+      await axiosConfig.post(
         "/api/posts",
         { title, body },
         {

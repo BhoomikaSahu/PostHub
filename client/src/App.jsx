@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Register from "./components/Register";
@@ -7,7 +7,7 @@ import CreatePost from "./components/CreatePost";
 import EditPost from "./components/EditPost";
 import Post from "./components/Post";
 import Navbar from "./components/Navbar";
-import axios from "axios";
+import axiosConfig from "./axiosConfig";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -22,7 +22,7 @@ const App = () => {
               Authorization: `Bearer ${token}`,
             },
           };
-          const { data } = await axios.get("/api/users/profile", config);
+          const { data } = await axiosConfig.get("/api/users/profile", config);
           setUser(data);
         } catch (error) {
           console.error(error);

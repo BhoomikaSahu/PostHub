@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import axios from "axios";
+import { useState } from "react";
+import axiosConfig from "../axiosConfig";
 import { useNavigate } from "react-router-dom";
 
 const Register = ({ setUser }) => {
@@ -11,7 +11,7 @@ const Register = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/users/register", {
+      const { data } = await axiosConfig.post("/api/users/register", {
         username,
         email,
         password,

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import axiosConfig from "../axiosConfig";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const { data } = await axios.get("/api/posts");
+      const { data } = await axiosConfig.get("/api/posts");
       setPosts(data);
     };
 

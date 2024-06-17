@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import axiosConfig from "../axiosConfig";
 import { useParams, useNavigate } from "react-router-dom";
 
 const EditPost = () => {
@@ -10,7 +10,7 @@ const EditPost = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const { data } = await axios.get(`/api/posts/${id}`);
+      const { data } = await axiosConfig.get(`/api/posts/${id}`);
       setTitle(data.title);
       setBody(data.body);
     };
@@ -22,7 +22,7 @@ const EditPost = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     try {
-      await axios.put(
+      await axiosConfig.put(
         `/api/posts/${id}`,
         { title, body },
         {
