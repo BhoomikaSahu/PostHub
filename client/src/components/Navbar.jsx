@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ user, setUser }) => {
@@ -22,7 +22,7 @@ const Navbar = ({ user, setUser }) => {
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="text-xl font-bold text-gray-900">
-              MyApp
+              PostHub
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
