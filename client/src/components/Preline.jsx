@@ -5,15 +5,15 @@ const Preline = () => {
   const location = useLocation();
 
   useEffect(() => {
-    import("preline/preline");
-  }, []);
+    const initializePreline = async () => {
+      const preline = await import("preline");
+      preline.HSStaticMethods.autoInit();
+    };
 
-  useEffect(() => {
-    // @ts-ignore
-    HSStaticMethods.autoInit();
+    initializePreline();
   }, [location.pathname]);
 
-  return <></>;
+  return null;
 };
 
 export default Preline;
