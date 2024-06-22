@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Add some basic styling */
-body {
+/* body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -29,4 +33,4 @@ nav a:hover {
 
 .container {
   padding: 20px;
-}
+} */

@@ -8,6 +8,8 @@ import EditPost from "./components/EditPost";
 import Post from "./components/Post";
 import Navbar from "./components/Navbar";
 import axiosConfig from "./axiosConfig";
+import Preline from "./components/Preline";
+// import "preline/preline";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -35,6 +37,7 @@ const App = () => {
 
   return (
     <Router>
+      <Preline />
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />} />
